@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+// README.md
+# Articles App - TypeScript + Expo Router
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native Expo mobile application built with TypeScript and Expo Router that displays articles fetched from a public API with detailed views and comments.
 
-## Get started
+## Features
 
-1. Install dependencies
+### Core Features
+- **Article List**: Display articles with title and snippet
+- **Article Details**: Full article view with comments
+- **Loading States**: Proper loading indicators
+- **Error Handling**: User-friendly error messages with retry functionality
+- **TypeScript**: Full type safety throughout the application
+- **Expo Router**: File-based routing system
 
+## Architecture
+
+### State Management
+- **Zustand**: Lightweight state management with TypeScript support and persistence
+- **Persistent Storage**: Articles and comments are cached locally with type safety
+
+### Routing
+- **Expo Router**: File-based routing system with automatic TypeScript route generation
+- **Dynamic Routes**: `/article/[id]` for article details with type-safe parameters
+
+## Setup & Installation
+
+### Prerequisites
+- Node.js (16 or higher)
+- npm or yarn
+- Expo CLI (`npm install -g @expo/cli`)
+
+### Installation Steps
+
+1. **Create new Expo project with TypeScript:**
    ```bash
-   npm install
+   npx create-expo-app ArticlesApp --template tabs@49
+   cd ArticlesApp
    ```
 
-2. Start the app
-
+2. **Install dependencies:**
    ```bash
-   npx expo start
+   yarn add expo-router zustand @react-native-async-storage/async-storage
+   yarn add --save-dev @types/react @types/react-native typescript
    ```
 
-In the output, you'll find options to open the app in a
+3. **Copy the source code** into your project following the structure above
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+4. **Start the development server:**
+   ```bash
+   npm start
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. **Run on device/simulator:**
+   - iOS: Press `i` or scan QR with Camera app
+   - Android: Press `a` or scan QR with Expo Go app
